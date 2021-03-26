@@ -11,6 +11,13 @@ pool:
 
 steps:
 - script: echo Hello, world!
+- task: Ant@1
+  inputs:
+    buildFile: 'build.xml'
+    options: 
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
   displayName: 'Run a one-line script'
 
 - script: |
